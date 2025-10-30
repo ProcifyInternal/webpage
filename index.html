@@ -74,23 +74,25 @@
           </div>
         </div>
         <div class="relative">
-          <div class="aspect-video rounded-2xl border border-green-900/40 bg-neutral-900/40 p-4 shadow-[0_0_40px_rgba(34,197,94,0.15)]">
+          <div class="aspect-[4/3] md:aspect-video rounded-2xl border border-green-900/40 bg-neutral-900/40 p-4 shadow-[0_0_40px_rgba(34,197,94,0.15)]">
             <div class="h-full w-full rounded-xl bg-gradient-to-tr from-neutral-900 via-neutral-800 to-neutral-900 relative overflow-hidden">
               <div class="absolute inset-0 opacity-40" style="background: radial-gradient(600px circle at 70% 30%, rgba(34,197,94,0.25), transparent 40%)"></div>
               
               <!-- Automation Dashboard -->
-              <div class="absolute inset-2 md:inset-4 flex flex-col">
+              <div class="absolute inset-3 md:inset-6 flex flex-col">
                 <!-- Header -->
-                <div class="flex items-center justify-between mb-2 md:mb-3">
-                  <div class="text-xs md:text-sm font-medium text-green-300">Automation Dashboard</div>
-                  <div class="flex items-center gap-1 md:gap-2 text-xs text-neutral-400">
-                    <span class="h-1.5 w-1.5 md:h-2 md:w-2 rounded-full bg-green-400 animate-pulse"></span>
-                    Live
+                <div class="mb-3 md:mb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0">
+                    <div class="text-xs md:text-sm font-medium text-green-300">Automation Dashboard</div>
+                    <div class="flex items-center gap-1 md:gap-2 text-xs text-neutral-400">
+                      <span class="h-1.5 w-1.5 md:h-2 md:w-2 rounded-full bg-green-400 animate-pulse"></span>
+                      <span>Live</span>
+                    </div>
                   </div>
                 </div>
                 
                 <!-- Process Cards -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 md:gap-2 mb-2 md:mb-3">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 mb-3 md:mb-4">
                   <!-- Email Automation -->
                   <div class="dashboard-card bg-black/30 rounded-lg p-2 md:p-3 border border-green-900/30">
                     <div class="flex items-center gap-1.5 md:gap-2 mb-1 md:mb-2">
@@ -119,9 +121,9 @@
                 </div>
                 
                 <!-- Activity Feed - Takes remaining space -->
-                <div class="dashboard-card bg-black/30 rounded-lg p-2 md:p-3 border border-green-900/30 flex-1 min-h-0 mb-12 md:mb-14">
-                  <div class="text-xs text-neutral-300 mb-1 md:mb-2">Recent Activity</div>
-                  <div class="space-y-1 overflow-hidden" id="activityFeed">
+                <div class="dashboard-card bg-black/30 rounded-lg p-3 md:p-4 border border-green-900/30 flex-1 min-h-0">
+                  <div class="text-xs text-neutral-300 mb-2 md:mb-3">Recent Activity</div>
+                  <div class="space-y-1.5 overflow-hidden" id="activityFeed">
                     <div class="activity-item flex items-center gap-2 text-xs opacity-80">
                       <span class="h-1 w-1 rounded-full bg-green-400 flex-shrink-0"></span>
                       <span class="text-neutral-400 truncate">Processing invoice INV-2024-001...</span>
@@ -139,15 +141,6 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              
-              <!-- Bottom Status Bar -->
-              <div class="absolute bottom-2 md:bottom-4 left-2 md:left-4 right-2 md:right-4 flex items-center justify-between rounded-lg border border-green-900/40 bg-black/70 backdrop-blur-sm p-2 md:p-3 text-neutral-300">
-                <div class="flex items-center gap-2 md:gap-3">
-                  <span class="inline-flex h-1.5 w-1.5 md:h-2 md:w-2 rounded-full bg-green-400 animate-pulse"></span> 
-                  <span class="text-xs md:text-sm">Automation Active</span>
-                </div>
-                <div class="text-neutral-400 text-xs md:text-sm">3.2k tasks completed today</div>
               </div>
             </div>
           </div>
