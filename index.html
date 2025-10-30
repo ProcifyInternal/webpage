@@ -5,38 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Procify — Automation that speeds up your business</title>
     <meta name="description" content="Procify builds bespoke automation that reduces manual admin by 70–80% — and in some cases up to 100%." />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="procify-logo.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="procify-image.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="procify-image.png">
+    <link rel="apple-touch-icon" href="procify-image.png">
+    <link rel="shortcut icon" href="procify-logo.ico">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      html, body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
-      .bg-grid {
-        background-image:
-          radial-gradient(1000px 500px at 70% -10%, rgba(34,197,94,0.18), transparent 60%),
-          radial-gradient(800px 400px at 10% 120%, rgba(34,197,94,0.1), transparent 60%),
-          radial-gradient(circle at center, rgba(34,197,94,0.06), transparent 50%);
-      }
-      .grid-overlay {
-        background-image:
-          linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
-        background-size: 60px 60px, 60px 60px;
-        opacity: .08;
-      }
-      .hover-glow {
-        position: relative;
-        overflow: hidden;
-      }
-      .hover-glow::after {
-        content: "";
-        position: absolute; inset: -1px;
-        background: radial-gradient(600px circle at var(--x) var(--y), rgba(34,197,94,0.12), transparent 40%);
-        opacity: 0; transition: opacity .25s ease;
-        pointer-events: none;
-      }
-      .hover-glow:hover::after { opacity: 1; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body class="min-h-screen text-white bg-black selection:bg-green-500/30 selection:text-white">
     <div class="pointer-events-none fixed inset-0 -z-10 bg-grid"></div>
@@ -45,16 +26,15 @@
     <header class="sticky top-0 z-50 border-b border-green-900/30 backdrop-blur supports-[backdrop-filter]:bg-black/60">
       <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
         <a href="#top" class="inline-flex items-center gap-2">
-          <div class="h-8 w-8 rounded-xl bg-gradient-to-br from-green-500 to-emerald-400 shadow-[0_0_24px_rgba(34,197,94,0.6)]"></div>
+          <img src="procify-logo.svg" alt="Procify Logo" class="h-8 w-8">
           <span class="text-lg font-bold tracking-[0.12em]">PROCIFY</span>
         </a>
         <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="#solutions" class="text-neutral-300 hover:text-white" data-i18n="nav_solutions">Solutions</a>
-          <a href="#process" class="text-neutral-300 hover:text-white" data-i18n="nav_how">How it works</a>
-          <a href="#results" class="text-neutral-300 hover:text-white" data-i18n="nav_results">Results</a>
-          <a href="#contact" class="text-neutral-300 hover:text-white" data-i18n="nav_contact">Contact</a>
-          <a href="#contact" class="rounded-full border border-green-600/60 bg-green-500/10 px-4 py-2 text-green-300 hover:bg-green-500/20" data-i18n="nav_demo">Get a demo</a>
-          <button id="langToggle" class="rounded-full border border-green-700/60 px-3 py-1 text-xs text-green-300 hover:bg-green-500/10">HR / EN</button>
+          <a href="#solutions" class="text-neutral-300 hover:text-white">Solutions</a>
+          <a href="#process" class="text-neutral-300 hover:text-white">How it works</a>
+          <a href="#results" class="text-neutral-300 hover:text-white">Results</a>
+          <a href="#contact" class="text-neutral-300 hover:text-white">Contact</a>
+          <a href="#contact" class="rounded-full border border-green-600/60 bg-green-500/10 px-4 py-2 text-green-300 hover:bg-green-500/20">Get a demo</a>
         </nav>
         <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-green-900/50 p-2 text-neutral-200" aria-label="Toggle menu">
           <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor"><path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></svg>
@@ -62,13 +42,12 @@
       </div>
       <div id="mobileMenu" class="hidden md:hidden border-t border-green-900/30 bg-black/80 px-4 pb-4">
         <div class="flex flex-col gap-2 py-2 text-sm">
-          <a href="#solutions" class="py-2 text-neutral-300 hover:text-white" data-i18n="nav_solutions">Solutions</a>
-          <a href="#process" class="py-2 text-neutral-300 hover:text-white" data-i18n="nav_how">How it works</a>
-          <a href="#results" class="py-2 text-neutral-300 hover:text-white" data-i18n="nav_results">Results</a>
-          <a href="#contact" class="py-2 text-neutral-300 hover:text-white" data-i18n="nav_contact">Contact</a>
-          <div class="flex items-center gap-2 pt-2">
-            <a href="#contact" class="rounded-xl border border-green-700/60 bg-green-500/10 px-4 py-2 text-green-300" data-i18n="nav_demo">Get a demo</a>
-            <button id="langToggleMobile" class="rounded-full border border-green-700/60 px-3 py-1 text-xs text-green-300">HR / EN</button>
+          <a href="#solutions" class="py-2 text-neutral-300 hover:text-white">Solutions</a>
+          <a href="#process" class="py-2 text-neutral-300 hover:text-white">How it works</a>
+          <a href="#results" class="py-2 text-neutral-300 hover:text-white">Results</a>
+          <a href="#contact" class="py-2 text-neutral-300 hover:text-white">Contact</a>
+          <div class="pt-2">
+            <a href="#contact" class="rounded-xl border border-green-700/60 bg-green-500/10 px-4 py-2 text-green-300">Get a demo</a>
           </div>
         </div>
       </div>
@@ -77,33 +56,98 @@
     <section id="top" class="relative">
       <div class="mx-auto max-w-7xl px-4 py-20 md:py-28 grid items-center gap-10 md:grid-cols-2">
         <div>
-          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1 text-xs font-medium text-green-300">⚡ <span data-i18n="tagline">Automation for real business impact</span></span>
-          <h1 class="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight" data-i18n="hero_title">
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1 text-xs font-medium text-green-300">⚡ Automation for real business impact</span>
+          <h1 class="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight">
             Automate and accelerate your admin & business workflows.
           </h1>
-          <p class="mt-5 text-neutral-300 md:text-lg max-w-xl" data-i18n="hero_sub">
+          <p class="mt-5 text-neutral-300 md:text-lg max-w-xl">
             Procify builds bespoke automation that reduces manual workload by <strong class="text-white font-semibold">70–80%</strong> — and in some use‑cases up to <strong class="text-white font-semibold">100%</strong>. Turn slow, error‑prone tasks into reliable, fast flows.
           </p>
           <div class="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 font-semibold text-black hover:brightness-110" data-i18n="cta_discovery">Book a discovery call</a>
-            <a href="#solutions" class="inline-flex items-center gap-2 rounded-full border border-green-700/60 px-5 py-3 text-green-300 hover:bg-green-500/10" data-i18n="cta_solutions">See solutions</a>
+            <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 font-semibold text-black hover:brightness-110">Book a discovery call</a>
+            <a href="#solutions" class="inline-flex items-center gap-2 rounded-full border border-green-700/60 px-5 py-3 text-green-300 hover:bg-green-500/10">See solutions</a>
           </div>
           <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-6 text-neutral-300">
-            <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight text-green-400 drop-shadow-[0_0_10px_rgba(34,197,94,0.35)]">70–80%</div><div class="mt-1 text-sm md:text-base" data-i18n="stat1">Average manual work reduced</div></div>
-            <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight text-green-400 drop-shadow-[0_0_10px_rgba(34,197,94,0.35)]">&lt; 2 weeks</div><div class="mt-1 text-sm md:text-base" data-i18n="stat2">Typical MVP delivery</div></div>
-            <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight text-green-400 drop-shadow-[0_0_10px_rgba(34,197,94,0.35)]">99.9%</div><div class="mt-1 text-sm md:text-base" data-i18n="stat3">Data accuracy (with validation)</div></div>
+            <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight text-green-400 drop-shadow-[0_0_10px_rgba(34,197,94,0.35)]">70–80%</div><div class="mt-1 text-sm md:text-base">Average manual work reduced</div></div>
+            <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight text-green-400 drop-shadow-[0_0_10px_rgba(34,197,94,0.35)]">&lt; 2 weeks</div><div class="mt-1 text-sm md:text-base">Typical MVP delivery</div></div>
+            <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight text-green-400 drop-shadow-[0_0_10px_rgba(34,197,94,0.35)]">99.9%</div><div class="mt-1 text-sm md:text-base">Data accuracy (with validation)</div></div>
           </div>
         </div>
         <div class="relative">
           <div class="aspect-video rounded-2xl border border-green-900/40 bg-neutral-900/40 p-4 shadow-[0_0_40px_rgba(34,197,94,0.15)]">
             <div class="h-full w-full rounded-xl bg-gradient-to-tr from-neutral-900 via-neutral-800 to-neutral-900 relative overflow-hidden">
               <div class="absolute inset-0 opacity-40" style="background: radial-gradient(600px circle at 70% 30%, rgba(34,197,94,0.25), transparent 40%)"></div>
-              <div class="absolute inset-0 grid grid-cols-12 grid-rows-6 gap-[1px] p-6 opacity-20">
-                <template id="cells"></template>
+              
+              <!-- Automation Dashboard -->
+              <div class="absolute inset-2 md:inset-4 flex flex-col">
+                <!-- Header -->
+                <div class="flex items-center justify-between mb-2 md:mb-3">
+                  <div class="text-xs md:text-sm font-medium text-green-300">Automation Dashboard</div>
+                  <div class="flex items-center gap-1 md:gap-2 text-xs text-neutral-400">
+                    <span class="h-1.5 w-1.5 md:h-2 md:w-2 rounded-full bg-green-400 animate-pulse"></span>
+                    Live
+                  </div>
+                </div>
+                
+                <!-- Process Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 md:gap-2 mb-2 md:mb-3">
+                  <!-- Email Automation -->
+                  <div class="dashboard-card bg-black/30 rounded-lg p-2 md:p-3 border border-green-900/30">
+                    <div class="flex items-center gap-1.5 md:gap-2 mb-1 md:mb-2">
+                      <div class="h-1.5 w-1.5 md:h-2 md:w-2 rounded-full bg-green-400 status-indicator"></div>
+                      <span class="text-xs text-neutral-300">Email Processing</span>
+                    </div>
+                    <div class="text-sm md:text-lg font-bold text-green-400">247</div>
+                    <div class="text-xs text-neutral-400">Emails automated today</div>
+                    <div class="mt-1 h-1 bg-neutral-700 rounded-full overflow-hidden">
+                      <div class="h-full bg-green-400 rounded-full progress-bar animate-pulse" style="width: 78%"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Data Entry -->
+                  <div class="dashboard-card bg-black/30 rounded-lg p-2 md:p-3 border border-green-900/30">
+                    <div class="flex items-center gap-1.5 md:gap-2 mb-1 md:mb-2">
+                      <div class="h-1.5 w-1.5 md:h-2 md:w-2 rounded-full bg-green-400 status-indicator"></div>
+                      <span class="text-xs text-neutral-300">Data Entry</span>
+                    </div>
+                    <div class="text-sm md:text-lg font-bold text-green-400">1.2k</div>
+                    <div class="text-xs text-neutral-400">Records processed</div>
+                    <div class="mt-1 h-1 bg-neutral-700 rounded-full overflow-hidden">
+                      <div class="h-full bg-green-400 rounded-full progress-bar animate-pulse" style="width: 65%"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Activity Feed - Takes remaining space -->
+                <div class="dashboard-card bg-black/30 rounded-lg p-2 md:p-3 border border-green-900/30 flex-1 min-h-0 mb-12 md:mb-14">
+                  <div class="text-xs text-neutral-300 mb-1 md:mb-2">Recent Activity</div>
+                  <div class="space-y-1 overflow-hidden" id="activityFeed">
+                    <div class="activity-item flex items-center gap-2 text-xs opacity-80">
+                      <span class="h-1 w-1 rounded-full bg-green-400 flex-shrink-0"></span>
+                      <span class="text-neutral-400 truncate">Processing invoice INV-2024-001...</span>
+                      <span class="text-green-400 flex-shrink-0">✓</span>
+                    </div>
+                    <div class="activity-item flex items-center gap-2 text-xs opacity-60">
+                      <span class="h-1 w-1 rounded-full bg-yellow-400 flex-shrink-0"></span>
+                      <span class="text-neutral-400 truncate">Syncing customer data to CRM...</span>
+                      <span class="text-yellow-400 flex-shrink-0">⟲</span>
+                    </div>
+                    <div class="activity-item flex items-center gap-2 text-xs opacity-40">
+                      <span class="h-1 w-1 rounded-full bg-green-400 flex-shrink-0"></span>
+                      <span class="text-neutral-400 truncate">Email campaign sent (247 recipients)</span>
+                      <span class="text-green-400 flex-shrink-0">✓</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-lg border border-green-900/40 bg-black/50 p-3 text-neutral-300">
-                <div class="flex items-center gap-3"><span class="inline-flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span> <span data-i18n="live_bot">Live bot</span></div>
-                <div class="text-neutral-400 text-sm" data-i18n="rpa_label">Robotic Process Automation</div>
+              
+              <!-- Bottom Status Bar -->
+              <div class="absolute bottom-2 md:bottom-4 left-2 md:left-4 right-2 md:right-4 flex items-center justify-between rounded-lg border border-green-900/40 bg-black/70 backdrop-blur-sm p-2 md:p-3 text-neutral-300">
+                <div class="flex items-center gap-2 md:gap-3">
+                  <span class="inline-flex h-1.5 w-1.5 md:h-2 md:w-2 rounded-full bg-green-400 animate-pulse"></span> 
+                  <span class="text-xs md:text-sm">Automation Active</span>
+                </div>
+                <div class="text-neutral-400 text-xs md:text-sm">3.2k tasks completed today</div>
               </div>
             </div>
           </div>
@@ -114,15 +158,40 @@
     <section id="solutions" class="relative border-t border-green-900/30">
       <div class="mx-auto max-w-7xl px-4 py-16 md:py-24">
         <div class="max-w-2xl">
-          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight" data-i18n="solutions_title">What we automate</h2>
-          <p class="mt-3 text-neutral-300" data-i18n="solutions_sub">A focused set of high‑impact, admin‑heavy processes we consistently turn into hands‑free flows.</p>
+          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight">What we automate</h2>
+          <p class="mt-3 text-neutral-300">A focused set of high‑impact, admin‑heavy processes we consistently turn into hands‑free flows.</p>
         </div>
-        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" id="features"></div>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" id="features">
+          <div class="hover-glow relative overflow-hidden rounded-2xl border border-green-900/40 bg-neutral-900/40 p-5 md:p-6 transition-colors hover:bg-neutral-900/70">
+            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight">Automated email outreach & replies</h3></div>
+            <p class="mt-2 text-sm text-neutral-300 leading-relaxed">Trigger personalized emails based on events, parse inbound mail, auto‑route to the right owner, and draft replies — with human‑in‑the‑loop when needed.</p>
+          </div>
+          <div class="hover-glow relative overflow-hidden rounded-2xl border border-green-900/40 bg-neutral-900/40 p-5 md:p-6 transition-colors hover:bg-neutral-900/70">
+            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight">Data entry & syncing</h3></div>
+            <p class="mt-2 text-sm text-neutral-300 leading-relaxed">Pull data from PDFs, forms or spreadsheets and write it into CRMs, ERPs or databases. Validate with rules to ensure 99.9% accuracy.</p>
+          </div>
+          <div class="hover-glow relative overflow-hidden rounded-2xl border border-green-900/40 bg-neutral-900/40 p-5 md:p-6 transition-colors hover:bg-neutral-900/70">
+            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight">Invoice & document processing</h3></div>
+            <p class="mt-2 text-sm text-neutral-300 leading-relaxed">Extract invoice numbers, line items, and totals; reconcile with purchase orders; export clean spreadsheets or push straight into your finance system.</p>
+          </div>
+          <div class="hover-glow relative overflow-hidden rounded-2xl border border-green-900/40 bg-neutral-900/40 p-5 md:p-6 transition-colors hover:bg-neutral-900/70">
+            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight">Reports & dashboards</h3></div>
+            <p class="mt-2 text-sm text-neutral-300 leading-relaxed">Compile weekly KPIs, transform raw data, and publish dashboards automatically so your team always sees fresh, trustworthy numbers.</p>
+          </div>
+          <div class="hover-glow relative overflow-hidden rounded-2xl border border-green-900/40 bg-neutral-900/40 p-5 md:p-6 transition-colors hover:bg-neutral-900/70">
+            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight">Spreadsheet automation</h3></div>
+            <p class="mt-2 text-sm text-neutral-300 leading-relaxed">Generate, merge and format Excel/Google Sheets — no more copy‑paste. Bulk updates, pivots, charts, you name it.</p>
+          </div>
+          <div class="hover-glow relative overflow-hidden rounded-2xl border border-green-900/40 bg-neutral-900/40 p-5 md:p-6 transition-colors hover:bg-neutral-900/70">
+            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight">Form filling & web flows</h3></div>
+            <p class="mt-2 text-sm text-neutral-300 leading-relaxed">Automate repetitive web tasks: logins, form filling, downloads, uploads — with audit trails and alerting.</p>
+          </div>
+        </div>
         <div class="mt-10 flex flex-wrap items-center gap-3 text-green-300 text-xs">
-          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1">⚡ <span data-i18n="pill_mail">Mail automation</span></span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1">⚡ <span data-i18n="pill_pdf">PDF → Excel</span></span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1">⚡ <span data-i18n="pill_crm">CRM/ERP sync</span></span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1">⚡ <span data-i18n="pill_rpa">RPA + AI</span></span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1">⚡ Mail automation</span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1">⚡ PDF → Excel</span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1">⚡ CRM/ERP sync</span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1">⚡ RPA + AI</span>
         </div>
       </div>
     </section>
@@ -130,34 +199,55 @@
     <section id="process" class="relative border-t border-green-900/30">
       <div class="mx-auto max-w-7xl px-4 py-16 md:py-24">
         <div class="max-w-2xl">
-          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight" data-i18n="process_title">How it works</h2>
-          <p class="mt-3 text-neutral-300" data-i18n="process_sub">From idea to running automation in days, not months.</p>
+          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight">How it works</h2>
+          <p class="mt-3 text-neutral-300">From idea to running automation in days, not months.</p>
         </div>
-        <div class="mt-10 grid gap-6 md:grid-cols-3" id="steps"></div>
+        <div class="mt-10 grid gap-6 md:grid-cols-3" id="steps">
+          <div class="rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6">
+            <div class="text-sm text-neutral-400">Step 1</div>
+            <div class="mt-2 text-xl font-semibold">Discover</div>
+            <p class="mt-2 text-sm text-neutral-300">We map your process, quantify the ROI, and pick quick wins.</p>
+          </div>
+          <div class="rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6">
+            <div class="text-sm text-neutral-400">Step 2</div>
+            <div class="mt-2 text-xl font-semibold">Design</div>
+            <p class="mt-2 text-sm text-neutral-300">We prototype with real data, add validations, and design the human‑in‑the‑loop.</p>
+          </div>
+          <div class="rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6">
+            <div class="text-sm text-neutral-400">Step 3</div>
+            <div class="mt-2 text-xl font-semibold">Deliver</div>
+            <p class="mt-2 text-sm text-neutral-300">We ship, monitor, and iterate. Your team sees results immediately.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="results" class="relative border-t border-green-900/30">
       <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 grid gap-10 md:grid-cols-2 items-center">
         <div>
-          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight" data-i18n="results_title">Proven outcomes</h2>
-          <ul class="mt-5 space-y-3 text-neutral-200" id="bullets"></ul>
+          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight">Proven outcomes</h2>
+          <ul class="mt-5 space-y-3 text-neutral-200" id="bullets">
+            <li class="flex items-start gap-3"><span class="mt-1 text-green-400">✔</span><span>70–80% average time saved on admin workloads</span></li>
+            <li class="flex items-start gap-3"><span class="mt-1 text-green-400">✔</span><span>Up to 100% automation for fully digital inputs</span></li>
+            <li class="flex items-start gap-3"><span class="mt-1 text-green-400">✔</span><span>Error rates cut to near‑zero with rule‑based checks</span></li>
+            <li class="flex items-start gap-3"><span class="mt-1 text-green-400">✔</span><span>Audit trails and logs for compliance</span></li>
+          </ul>
           <div class="mt-8">
-            <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 font-semibold text-black hover:brightness-110" data-i18n="cta_quote">Request a quote</a>
+            <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 font-semibold text-black hover:brightness-110">Request a quote</a>
           </div>
         </div>
         <div class="rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6">
-          <div class="text-sm text-neutral-400" data-i18n="example_label">Example scenario</div>
-          <div class="mt-2 text-xl font-semibold" data-i18n="example_title">Invoices → Excel → ERP, fully automated</div>
-          <p class="mt-2 text-sm text-neutral-300" data-i18n="example_desc">Parse supplier PDFs, capture bill numbers, items and totals, validate against POs, and post to ERP. A final human check only when rules flag something.</p>
+          <div class="text-sm text-neutral-400">Example scenario</div>
+          <div class="mt-2 text-xl font-semibold">Invoices → Excel → ERP, fully automated</div>
+          <p class="mt-2 text-sm text-neutral-300">Parse supplier PDFs, capture bill numbers, items and totals, validate against POs, and post to ERP. A final human check only when rules flag something.</p>
           <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
             <div class="rounded-xl border border-green-900/40 bg-black/40 p-4">
-              <div class="text-neutral-400" data-i18n="before">Before</div>
-              <div class="mt-1 text-neutral-200" data-i18n="before_desc">3–4h/day manual copy‑paste, frequent errors</div>
+              <div class="text-neutral-400">Before</div>
+              <div class="mt-1 text-neutral-200">3–4h/day manual copy‑paste, frequent errors</div>
             </div>
             <div class="rounded-xl border border-green-900/40 bg-black/40 p-4">
-              <div class="text-neutral-400" data-i18n="after">After</div>
-              <div class="mt-1 text-neutral-200" data-i18n="after_desc">~20 min/day oversight, 99.9% accuracy</div>
+              <div class="text-neutral-400">After</div>
+              <div class="mt-1 text-neutral-200">~20 min/day oversight, 99.9% accuracy</div>
             </div>
           </div>
         </div>
@@ -167,40 +257,39 @@
     <section id="contact" class="relative border-t border-green-900/30">
       <div class="mx-auto max-w-7xl px-4 py-16 md:py-24">
         <div class="max-w-2xl">
-          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight" data-i18n="contact_title">Let’s talk</h2>
-          <p class="mt-3 text-neutral-300" data-i18n="contact_sub">Tell us about your process. We’ll reply with a quick plan, a timeline, and a ballpark estimate.</p>
+          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight">Let's talk</h2>
+          <p class="mt-3 text-neutral-300">Tell us about your process. We'll reply with a quick plan, a timeline, and a ballpark estimate.</p>
         </div>
         <div class="mt-8 grid gap-6 md:grid-cols-3">
-          <form class="md:col-span-2 rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6 space-y-4" onsubmit="event.preventDefault(); alert(currentLang==='en' ? 'Thanks! We\\'ll get back to you.' : 'Hvala! Javit ćemo se uskoro.');">
+          <form class="md:col-span-2 rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6 space-y-4" id="contactForm">
             <div class="grid gap-4 sm:grid-cols-2">
               <label class="block text-sm">
-                <span class="text-neutral-300" data-i18n="form_name">Name</span>
-                <input required class="mt-1 w-full rounded-xl border border-green-900/40 bg-black/50 px-4 py-3 outline-none ring-0 focus:border-green-500" placeholder="Your name" data-i18n-placeholder="ph_name" />
+                <span class="text-neutral-300">Name</span>
+                <input name="name" required class="mt-1 w-full rounded-xl border border-green-900/40 bg-black/50 px-4 py-3 outline-none ring-0 focus:border-green-500" placeholder="Your name" />
               </label>
               <label class="block text-sm">
-                <span class="text-neutral-300" data-i18n="form_email">Email</span>
-                <input type="email" required class="mt-1 w-full rounded-xl border border-green-900/40 bg-black/50 px-4 py-3 outline-none ring-0 focus:border-green-500" placeholder="you@company.com" data-i18n-placeholder="ph_email" />
+                <span class="text-neutral-300">Email</span>
+                <input name="email" type="email" required class="mt-1 w-full rounded-xl border border-green-900/40 bg-black/50 px-4 py-3 outline-none ring-0 focus:border-green-500" placeholder="you@company.com" />
               </label>
             </div>
             <label class="block text-sm">
-              <span class="text-neutral-300" data-i18n="form_msg">What would you like to automate?</span>
-              <textarea rows="5" class="mt-1 w-full rounded-xl border border-green-900/40 bg-black/50 px-4 py-3 outline-none ring-0 focus:border-green-500" placeholder="Describe the current process and tools…" data-i18n-placeholder="ph_msg"></textarea>
+              <span class="text-neutral-300">What would you like to automate?</span>
+              <textarea name="message" rows="5" class="mt-1 w-full rounded-xl border border-green-900/40 bg-black/50 px-4 py-3 outline-none ring-0 focus:border-green-500" placeholder="Describe the current process and tools…"></textarea>
             </label>
             <div class="flex items-center justify-between">
-              <div class="text-xs text-neutral-400" data-i18n="form_disclaimer">By submitting, you agree to be contacted about Procify services.</div>
-              <button class="rounded-full bg-green-500 px-5 py-3 font-semibold text-black hover:brightness-110" data-i18n="form_send">Send</button>
+              <div class="text-xs text-neutral-400">By submitting, you agree to be contacted about Procify services.</div>
+              <button type="submit" class="rounded-full bg-green-500 px-5 py-3 font-semibold text-black hover:brightness-110">Send</button>
             </div>
           </form>
           <div class="rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6">
-            <div class="text-sm text-neutral-400" data-i18n="contact_label">Contact</div>
+            <div class="text-sm text-neutral-400">Contact</div>
             <div class="mt-2 space-y-2 text-neutral-200">
-              <div>hello@procify.hr</div>
-              <div>+385 (0)99 000 000</div>
-              <div data-i18n="address">Zagreb, Croatia</div>
+              <div>team@procify.co</div>
+              <div>Zagreb, Croatia</div>
             </div>
-            <div class="mt-6 text-sm text-neutral-300" data-i18n="contact_alt">Prefer WhatsApp or Teams? Add it in your message and we’ll reach out there.</div>
+            <div class="mt-6 text-sm text-neutral-300">Prefer WhatsApp or Teams? Add it in your message and we'll reach out there.</div>
             <div class="mt-6">
-              <a href="mailto:hello@procify.hr" class="inline-flex items-center gap-2 rounded-full border border-green-700/60 px-4 py-2 text-green-300 hover:bg-green-500/10">✉️ <span data-i18n="email_us">Email us</span></a>
+              <a href="mailto:team@procify.co" class="inline-flex items-center gap-2 rounded-full border border-green-700/60 px-4 py-2 text-green-300 hover:bg-green-500/10">✉️ Email us</a>
             </div>
           </div>
         </div>
@@ -209,24 +298,15 @@
 
     <footer class="border-t border-green-900/30">
       <div class="mx-auto max-w-7xl px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
-        <div>© <span id="year"></span> Procify. <span data-i18n="rights">All rights reserved.</span></div>
+        <div>© <span id="year"></span> Procify. All rights reserved.</div>
         <div class="flex items-center gap-4">
-          <a href="#solutions" class="hover:text-white" data-i18n="nav_solutions">Solutions</a>
-          <a href="#process" class="hover:text-white" data-i18n="nav_how">How it works</a>
-          <a href="#contact" class="hover:text-white" data-i18n="nav_contact">Contact</a>
+          <a href="#solutions" class="hover:text-white">Solutions</a>
+          <a href="#process" class="hover:text-white">How it works</a>
+          <a href="#contact" class="hover:text-white">Contact</a>
         </div>
       </div>
     </footer>
 
-    <script>
-      const grid = document.querySelector('#top template#cells')?.parentElement;
-      if (grid) { for (let i=0;i<72;i++){ const d=document.createElement('div'); d.className='bg-white/10'; grid.appendChild(d);} }
-      document.addEventListener('mousemove',(e)=>{ document.documentElement.style.setProperty('--x', e.clientX + 'px'); document.documentElement.style.setProperty('--y', e.clientY + 'px'); });
-      const mbBtn=document.getElementById('mobileMenuBtn'); const mb=document.getElementById('mobileMenu'); if(mbBtn&&mb) mbBtn.addEventListener('click',()=>mb.classList.toggle('hidden'));
-      const i18n={
-        en:{nav_solutions:'Solutions',nav_how:'How it works',nav_results:'Results',nav_contact:'Contact',nav_demo:'Get a demo',tagline:'Automation for real business impact',hero_title:'Automate and accelerate your admin & business workflows.',hero_sub:'Procify builds bespoke automation that reduces manual workload by <strong class="text-white font-semibold">70–80%</strong> — and in some use‑cases up to <strong class="text-white font-semibold">100%</strong>. Turn slow, error‑prone tasks into reliable, fast flows.',cta_discovery:'Book a discovery call',cta_solutions:'See solutions',stat1:'Average manual work reduced',stat2:'Typical MVP delivery',stat3:'Data accuracy (with validation)',solutions_title:'What we automate',solutions_sub:'A focused set of high‑impact, admin‑heavy processes we consistently turn into hands‑free flows.',pill_mail:'Mail automation',pill_pdf:'PDF → Excel',pill_crm:'CRM/ERP sync',pill_rpa:'RPA + AI',process_title:'How it works',process_sub:'From idea to running automation in days, not months.',results_title:'Proven outcomes',bullets:['70–80% average time saved on admin workloads','Up to 100% automation for fully digital inputs','Error rates cut to near‑zero with rule‑based checks','Audit trails and logs for compliance'],cta_quote:'Request a quote',example_label:'Example scenario',example_title:'Invoices → Excel → ERP, fully automated',example_desc:'Parse supplier PDFs, capture bill numbers, items and totals, validate against POs, and post to ERP. A final human check only when rules flag something.',before:'Before',before_desc:'3–4h/day manual copy‑paste, frequent errors',after:'After',after_desc:'~20 min/day oversight, 99.9% accuracy',contact_title:'Let’s talk',contact_sub:'Tell us about your process. We’ll reply with a quick plan, a timeline, and a ballpark estimate.',form_name:'Name',form_email:'Email',form_msg:'What would you like to automate?',form_send:'Send',form_disclaimer:'By submitting, you agree to be contacted about Procify services.',contact_label:'Contact',address:'Zagreb, Croatia',contact_alt:'Prefer WhatsApp or Teams? Add it in your message and we’ll reach out there.',email_us:'Email us',rights:'All rights reserved.',live_bot:'Live bot',rpa_label:'Robotic Process Automation',ph_name:'Your name',ph_email:'you@company.com',ph_msg:'Describe the current process and tools…',features:[{title:'Automated email outreach & replies',desc:'Trigger personalized emails based on events, parse inbound mail, auto‑route to the right owner, and draft replies — with human‑in‑the‑loop when needed.'},{title:'Data entry & syncing',desc:'Pull data from PDFs, forms or spreadsheets and write it into CRMs, ERPs or databases. Validate with rules to ensure 99.9% accuracy.'},{title:'Invoice & document processing',desc:'Extract invoice numbers, line items, and totals; reconcile with purchase orders; export clean spreadsheets or push straight into your finance system.'},{title:'Reports & dashboards',desc:'Compile weekly KPIs, transform raw data, and publish dashboards automatically so your team always sees fresh, trustworthy numbers.'},{title:'Spreadsheet automation',desc:'Generate, merge and format Excel/Google Sheets — no more copy‑paste. Bulk updates, pivots, charts, you name it.'},{title:'Form filling & web flows',desc:'Automate repetitive web tasks: logins, form filling, downloads, uploads — with audit trails and alerting.'}],steps:[{k:'Discover',v:'We map your process, quantify the ROI, and pick quick wins.'},{k:'Design',v:'We prototype with real data, add validations, and design the human‑in‑the‑loop.'},{k:'Deliver',v:'We ship, monitor, and iterate. Your team sees results immediately.'}]}, 
-        hr:{nav_solutions:'Rješenja',nav_how:'Kako radimo',nav_results:'Rezultati',nav_contact:'Kontakt',nav_demo:'Zatraži demo',tagline:'Automatizacija s mjerljivim učinkom',hero_title:'Automatizirajte i ubrzajte administrativne i poslovne procese.',hero_sub:'Procify izrađuje prilagođena rješenja koja smanjuju ručni rad za <strong class="text-white font-semibold">70–80%</strong> — a u nekim slučajevima i do <strong class="text-white font-semibold">100%</strong>. Spore, sklone greškama zadatke pretvaramo u pouzdane i brze tokove.',cta_discovery:'Rezerviraj konzultacije',cta_solutions:'Pogledaj rješenja',stat1:'Prosječno smanjenje ručnog rada',stat2:'Tipična isporuka MVP‑a',stat3:'Točnost podataka (uz validaciju)',solutions_title:'Što automatiziramo',solutions_sub:'Skup ciljanih, administrativno zahtjevnih procesa koje pretvaramo u „hands‑free“ tokove.',pill_mail:'Automatizacija e‑pošte',pill_pdf:'PDF → Excel',pill_crm:'CRM/ERP sinkronizacija',pill_rpa:'RPA + AI',process_title:'Kako radimo',process_sub:'Od ideje do rješenja u danima, ne mjesecima.',results_title:'Dokazani ishodi',bullets:['70–80% uštede vremena na administraciji','Do 100% automatizacije uz potpuno digitalne ulaze','Stope grešaka gotovo nula uz pravila validacije','Dnevnici događaja i trag revizije za usklađenost'],cta_quote:'Zatraži ponudu',example_label:'Primjer scenarija',example_title:'Računi → Excel → ERP, potpuno automatizirano',example_desc:'Parsiranje dobavljačkih PDF‑ova, izdvajanje brojeva računa, stavki i ukupnih iznosa, validacija s narudžbenicama i knjiženje u ERP. Ljudska provjera samo kada pravila nešto označe.',before:'Prije',before_desc:'3–4 h/dan ručnog kopiranja, česte greške',after:'Poslije',after_desc:'~20 min/dan nadzora, 99,9% točnost',contact_title:'Javite nam se',contact_sub:'Opišite proces koji želite automatizirati. Odgovorit ćemo planom, okvirnim rokom i procjenom cijene.',form_name:'Ime i prezime',form_email:'E‑pošta',form_msg:'Što želite automatizirati?',form_send:'Pošalji',form_disclaimer:'Slanjem pristajete da vas kontaktiramo u vezi Procify usluga.',contact_label:'Kontakt',address:'Zagreb, Hrvatska',contact_alt:'Preferirate WhatsApp ili Teams? Navedite u poruci i javit ćemo se tamo.',email_us:'Pošaljite e‑poruku',rights:'Sva prava pridržana.',live_bot:'Aktivni bot',rpa_label:'Robotska procesna automatizacija',ph_name:'Vaše ime',ph_email:'vi@tvrtka.com',ph_msg:'Opišite trenutni proces i alate…',features:[{title:'Automatsko slanje i odgovaranje na e‑poštu',desc:'Okidajte personalizirane poruke po događajima, parsirajte dolaznu poštu, automatski prosljeđujte pravoj osobi i pripremite odgovore — s ljudskom kontrolom po potrebi.'},{title:'Unošenje podataka i sinkronizacija',desc:'Povlačite podatke iz PDF‑ova, obrazaca ili tablica i upisujte ih u CRM‑ove, ERP‑ove ili baze podataka. Pravila validacije osiguravaju 99,9% točnost.'},{title:'Obrada računa i dokumenata',desc:'Izdvajanje brojeva računa, stavki i ukupnih iznosa; usklađivanje s narudžbenicama; izvoz čistih tablica ili direktan unos u financijski sustav.'},{title:'Izvještaji i nadzorne ploče',desc:'Sastavite tjedne KPI‑eve, transformirajte podatke i objavljujte dashboarde automatski — vaš tim uvijek gleda svježe, točne brojke.'},{title:'Automatizacija tablica',desc:'Generiranje, spajanje i uređivanje Excel/Google tablica — bez copy‑pastea. Masovna ažuriranja, pivot tablice, grafikoni…'},{title:'Popunjavanje obrazaca i web tokovi',desc:'Automatizirajte repetitivne web zadatke: prijave, obrasce, preuzimanja, prijenose — uz zapisnike i upozorenja.'}],steps:[{k:'Analiza',v:'Mapiramo proces, kvantificiramo povrat i biramo brze dobitke.'},{k:'Dizajn',v:'Prototipiramo na stvarnim podacima, dodajemo validacije i definiramo human‑in‑the‑loop.'},{k:'Isporuka',v:'Puštamo u rad, pratimo i iteriramo. Rezultati su vidljivi odmah.'}]}
-      };
-      let currentLang=localStorage.getItem('procify_lang')||'en';
-      const $=(s,c=document)=>Array.from(c.querySelectorAll(s));
-      function applyText(){document.documentElement.lang=currentLang;const d=i18n[currentLang];$('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(d[k]!==undefined) el.innerHTML=d[k];});$('[data-i18n-placeholder]').forEach(el=>{const k=el.getAttribute('data-i18n-placeholder'); if(d[k]!==undefined) el.setAttribute('placeholder', d[k]);});const bullets=document.getElementById('bullets');bullets.innerHTML='';d.bullets.forEach(t=>{const li=document.createElement('li');li.className='flex items-start gap-3';li.innerHTML='<span class=\"mt-1 text-green-400\">✔</span><span>'+t+'</span>';bullets.appendChild(li);});const features=document.getElementById('features');features.innerHTML='';d.features.forEach(f=>{const card=document.createElement('div');card.className='hover-glow relative overflow-hidden rounded-2xl border border-green-900/40 bg-neutral-900/40 p-5 md:p-6 transition-colors hover:bg-neutral-900/70';card.innerHTML='<div class=\"flex items-center gap-3 text-green-400\">⚡<h3 class=\"text-lg font-semibold tracking-tight\">'+f.title+'</h3></div><p class=\"mt-2 text-sm text-neutral-300 leading-relaxed\">'+f.desc+'</p>';features.appendChild(card);});const steps=document.getElementById('steps');steps.innerHTML='';d.steps.forEach((s,i)=>{const div=document.createElement('div');div.className='rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6';div.innerHTML='<div class=\"text-sm text-neutral-400\">'+(currentLang==='en'?'Step':'Korak')+' '+(i+1)+'</div><div class=\"mt-2 text-xl font-semibold\">'+s.k+'</div><p class=\"mt-2 text-sm text-neutral-300\">'+s.v+'</p>';steps.appendChild(div);});}\n      function toggleLang(){currentLang=currentLang==='en'?'hr':'en';localStorage.setItem('procify_lang', currentLang);applyText();}\n      document.getElementById('langToggle')?.addEventListener('click', toggleLang);\n      document.getElementById('langToggleMobile')?.addEventListener('click', toggleLang);\n      document.getElementById('year').textContent=new Date().getFullYear();\n      applyText();\n    </script>\n  </body>\n</html>\n
+    <script src="script.js"></script>
+  </body>
+</html>

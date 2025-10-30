@@ -1,0 +1,141 @@
+/* Custom CSS for Procify site */
+html, body { 
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; 
+}
+
+.bg-grid {
+  background-image:
+    radial-gradient(1000px 500px at 70% -10%, rgba(34,197,94,0.18), transparent 60%),
+    radial-gradient(800px 400px at 10% 120%, rgba(34,197,94,0.1), transparent 60%),
+    radial-gradient(circle at center, rgba(34,197,94,0.06), transparent 50%);
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 60px 60px, 60px 60px;
+  opacity: .08;
+}
+
+.hover-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-glow::after {
+  content: "";
+  position: absolute; 
+  inset: -1px;
+  background: radial-gradient(600px circle at var(--x) var(--y), rgba(34,197,94,0.12), transparent 40%);
+  opacity: 0; 
+  transition: opacity .25s ease;
+  pointer-events: none;
+}
+
+.hover-glow:hover::after { 
+  opacity: 1; 
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes slideInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+  }
+}
+
+@keyframes data-flow {
+  0% { opacity: 0.3; transform: translateX(-10px); }
+  50% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0.3; transform: translateX(10px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.dashboard-card {
+  animation: slideInUp 0.6s ease-out;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.activity-item {
+  transition: all 0.3s ease;
+  animation: slideInUp 0.4s ease-out;
+}
+
+.progress-bar {
+  transition: width 1s ease-in-out;
+}
+
+.status-indicator {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Form focus styles */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: rgb(34 197 94);
+  box-shadow: 0 0 0 1px rgb(34 197 94 / 0.3);
+}
+
+/* Mobile menu animation */
+#mobileMenu {
+  transition: all 0.3s ease;
+}
+
+/* Hover effects */
+a {
+  transition: all 0.2s ease;
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 197, 94, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 197, 94, 0.5);
+}
