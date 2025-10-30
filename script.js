@@ -1,5 +1,8 @@
 // Procify Website JavaScript
 
+// Initialize EmailJS
+emailjs.init('g2H0rsuWTMGElTN0Z');
+
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
   initializeMobileMenu();
@@ -125,7 +128,7 @@ function initializeMobileMenu() {
   }
 }
 
-// Contact form handling
+// Contact form handling with EmailJS
 function initializeContactForm() {
   const form = document.getElementById('contactForm');
   if (form) {
@@ -140,26 +143,113 @@ function initializeContactForm() {
       
       // Simple validation
       if (!name || !email || !message) {
-        alert('Please fill in all fields.');
+        showNotification('Please fill in all fields.', 'error');
         return;
       }
       
-      // Simulate form submission
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       
       submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
       
-      // Simulate async operation
-      setTimeout(() => {
-        alert('Thanks! We\'ll get back to you soon.');
-        form.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }, 1000);
+      // Prepare template parameters
+      const templateParams = {
+        name: name,
+        email: email,
+        message: message,
+      };
+      
+      // Send email using EmailJS
+      emailjs.send('service_nqoh68p', 'template_ursa1la', templateParams)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          showSuccessModal(name);
+          form.reset();
+        })
+        .catch(function(error) {
+          console.log('FAILED...', error);
+          showNotification('Sorry, there was an error sending your message. Please try again or contact us directly at team@procify.co', 'error');
+        })
+        .finally(function() {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        });
     });
   }
+}
+
+// Custom success modal
+function showSuccessModal(name) {
+  // Create modal backdrop
+  const backdrop = document.createElement('div');
+  backdrop.className = 'fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4';
+  
+  // Create modal content
+  const modal = document.createElement('div');
+  modal.className = 'bg-neutral-900 border border-green-500/30 rounded-2xl p-8 max-w-md w-full mx-auto shadow-[0_0_40px_rgba(34,197,94,0.25)] animate-fade-in';
+  
+  modal.innerHTML = `
+    <div class="text-center">
+      <div class="mb-4">
+        <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-2">Message Sent Successfully!</h3>
+        <p class="text-neutral-300 mb-4">Thanks ${name}! We've received your message and will get back to you within 24 hours.</p>
+        <p class="text-sm text-neutral-400 mb-6">Our team is excited to learn about your automation needs and help streamline your business processes.</p>
+      </div>
+      <button class="w-full bg-green-500 hover:bg-green-600 text-black font-semibold py-3 px-6 rounded-xl transition-colors" onclick="this.closest('.fixed').remove()">
+        Got it, thanks!
+      </button>
+    </div>
+  `;
+  
+  backdrop.appendChild(modal);
+  document.body.appendChild(backdrop);
+  
+  // Auto-close after 8 seconds
+  setTimeout(() => {
+    if (backdrop.parentNode) {
+      backdrop.remove();
+    }
+  }, 8000);
+  
+  // Close on backdrop click
+  backdrop.addEventListener('click', function(e) {
+    if (e.target === backdrop) {
+      backdrop.remove();
+    }
+  });
+}
+
+// Custom notification system
+function showNotification(message, type = 'info') {
+  const notification = document.createElement('div');
+  const bgColor = type === 'error' ? 'bg-red-500/20 border-red-500/30 text-red-300' : 'bg-green-500/20 border-green-500/30 text-green-300';
+  
+  notification.className = `fixed top-4 right-4 ${bgColor} border rounded-xl p-4 max-w-sm z-50 shadow-lg animate-slide-in`;
+  notification.innerHTML = `
+    <div class="flex items-start gap-3">
+      <div class="flex-1 text-sm">${message}</div>
+      <button onclick="this.parentElement.parentElement.remove()" class="text-neutral-400 hover:text-white">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  `;
+  
+  document.body.appendChild(notification);
+  
+  // Auto-remove after 5 seconds
+  setTimeout(() => {
+    if (notification.parentNode) {
+      notification.remove();
+    }
+  }, 5000);
 }
 
 // Mouse movement effects for hover glows
