@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="hr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Procify — Automation that speeds up your business</title>
-    <meta name="description" content="Procify builds bespoke automation that reduces manual admin by 70–80% — and in some cases up to 100%." />
+    <title>Procify — Automatizacija koja ubrzava vaše poslovanje</title>
+    <meta name="description" content="Procify gradi prilagođenu automatizaciju koja smanjuje ručni rad za 70–80% — a u nekim slučajevima i do 100%." />
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="procify-logo.ico">
@@ -31,24 +31,32 @@
           <span class="text-lg font-bold tracking-[0.12em]">PROCIFY</span>
         </a>
         <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="#solutions" class="text-neutral-300 hover:text-white">Solutions</a>
-          <a href="#process" class="text-neutral-300 hover:text-white">How it works</a>
-          <a href="#results" class="text-neutral-300 hover:text-white">Results</a>
-          <a href="#contact" class="text-neutral-300 hover:text-white">Contact</a>
-          <a href="#contact" class="rounded-full border border-green-600/60 bg-green-500/10 px-4 py-2 text-green-300 hover:bg-green-500/20">Get a demo</a>
+          <a href="#solutions" class="text-neutral-300 hover:text-white" data-i18n="nav.solutions">Rješenja</a>
+          <a href="#process" class="text-neutral-300 hover:text-white" data-i18n="nav.process">Kako funkcionira</a>
+          <a href="#results" class="text-neutral-300 hover:text-white" data-i18n="nav.results">Rezultati</a>
+          <a href="#contact" class="text-neutral-300 hover:text-white" data-i18n="nav.contact">Kontakt</a>
+          <a href="#contact" class="rounded-full border border-green-600/60 bg-green-500/10 px-4 py-2 text-green-300 hover:bg-green-500/20" data-i18n="nav.demo">Zatražite demo</a>
         </nav>
-        <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-green-900/50 p-2 text-neutral-200" aria-label="Toggle menu">
-          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor"><path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></svg>
-        </button>
+        <div class="flex items-center gap-3">
+          <button id="languageSwitcher" class="inline-flex items-center gap-2 rounded-lg border border-green-900/50 bg-green-500/5 px-3 py-2 text-sm text-neutral-200 hover:bg-green-500/10 transition-colors" aria-label="Switch language">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+            </svg>
+            <span id="currentLang">HR</span>
+          </button>
+          <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-green-900/50 p-2 text-neutral-200" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor"><path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></svg>
+          </button>
+        </div>
       </div>
       <div id="mobileMenu" class="hidden md:hidden border-t border-green-900/30 bg-black/80 px-4 pb-4">
         <div class="flex flex-col gap-2 py-2 text-sm">
-          <a href="#solutions" class="py-2 text-neutral-300 hover:text-white">Solutions</a>
-          <a href="#process" class="py-2 text-neutral-300 hover:text-white">How it works</a>
-          <a href="#results" class="py-2 text-neutral-300 hover:text-white">Results</a>
-          <a href="#contact" class="py-2 text-neutral-300 hover:text-white">Contact</a>
+          <a href="#solutions" class="py-2 text-neutral-300 hover:text-white" data-i18n="nav.solutions">Rješenja</a>
+          <a href="#process" class="py-2 text-neutral-300 hover:text-white" data-i18n="nav.process">Kako funkcionira</a>
+          <a href="#results" class="py-2 text-neutral-300 hover:text-white" data-i18n="nav.results">Rezultati</a>
+          <a href="#contact" class="py-2 text-neutral-300 hover:text-white" data-i18n="nav.contact">Kontakt</a>
           <div class="pt-2">
-            <a href="#contact" class="rounded-xl border border-green-700/60 bg-green-500/10 px-4 py-2 text-green-300">Get a demo</a>
+            <a href="#contact" class="rounded-xl border border-green-700/60 bg-green-500/10 px-4 py-2 text-green-300" data-i18n="nav.demo">Zakažite demo</a>
           </div>
         </div>
       </div>
@@ -57,21 +65,21 @@
     <section id="top" class="relative">
       <div class="mx-auto max-w-7xl px-4 py-20 md:py-28 grid items-center gap-10 md:grid-cols-2">
         <div>
-          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1 text-xs font-medium text-green-300">⚡ Automation for real business impact</span>
-          <h1 class="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight">
-            Automate and accelerate your admin & business workflows.
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1 text-xs font-medium text-green-300" data-i18n="hero.badge">⚡ Automatizacija za stvaran poslovni učinak</span>
+          <h1 class="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight" data-i18n="hero.title">
+            Automatizirajte i ubrzajte svoje administrativne i poslovne procese.
           </h1>
-          <p class="mt-5 text-neutral-300 md:text-lg max-w-xl">
-            Procify builds bespoke automation that reduces manual workload by <strong class="text-white font-semibold">70–80%</strong> — and in some use‑cases up to <strong class="text-white font-semibold">100%</strong>. Turn slow, error‑prone tasks into reliable, fast flows.
+          <p class="mt-5 text-neutral-300 md:text-lg max-w-xl" data-i18n-html="hero.description">
+            Procify gradi prilagođenu automatizaciju koja smanjuje ručni rad za <strong class="text-white font-semibold">70–80%</strong> — a u nekim slučajevima i do <strong class="text-white font-semibold">100%</strong>. Pretvorite spore, podložne pogreškama zadatke u pouzdane i brze procese.
           </p>
           <div class="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 font-semibold text-black hover:brightness-110">Book a discovery call</a>
-            <a href="#solutions" class="inline-flex items-center gap-2 rounded-full border border-green-700/60 px-5 py-3 text-green-300 hover:bg-green-500/10">See solutions</a>
+            <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 font-semibold text-black hover:brightness-110" data-i18n="hero.cta1">Zakažite razgovor</a>
+            <a href="#solutions" class="inline-flex items-center gap-2 rounded-full border border-green-700/60 px-5 py-3 text-green-300 hover:bg-green-500/10" data-i18n="hero.cta2">Pogledajte rješenja</a>
           </div>
           <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-6 text-neutral-300">
-            <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight text-green-400 drop-shadow-[0_0_10px_rgba(34,197,94,0.35)]">70–80%</div><div class="mt-1 text-sm md:text-base">Average manual work reduced</div></div>
-            <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight text-green-400 drop-shadow-[0_0_10px_rgba(34,197,94,0.35)]">&lt; 2 weeks</div><div class="mt-1 text-sm md:text-base">Typical MVP delivery</div></div>
-            <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight text-green-400 drop-shadow-[0_0_10px_rgba(34,197,94,0.35)]">99.9%</div><div class="mt-1 text-sm md:text-base">Data accuracy (with validation)</div></div>
+            <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight text-green-400 drop-shadow-[0_0_10px_rgba(34,197,94,0.35)]">70–80%</div><div class="mt-1 text-sm md:text-base" data-i18n="hero.stat1">Prosječno smanjenje ručnog rada</div></div>
+            <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight text-green-400 drop-shadow-[0_0_10px_rgba(34,197,94,0.35)]">&lt; 2 tjedna</div><div class="mt-1 text-sm md:text-base" data-i18n="hero.stat2">Tipično vrijeme isporuke MVP-a</div></div>
+            <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight text-green-400 drop-shadow-[0_0_10px_rgba(34,197,94,0.35)]">99.9%</div><div class="mt-1 text-sm md:text-base" data-i18n="hero.stat3">Točnost podataka (s validacijom)</div></div>
           </div>
         </div>
         <div class="relative">
@@ -84,10 +92,10 @@
                 <!-- Header -->
                 <div class="mb-2 md:mb-3">
                   <div class="flex items-center justify-between">
-                    <div class="text-xs md:text-sm font-medium text-green-300">Automation Dashboard</div>
+                    <div class="text-xs md:text-sm font-medium text-green-300" data-i18n="dashboard.title">Kontrolna ploča automatizacije</div>
                     <div class="flex items-center gap-1 text-xs text-neutral-400">
                       <span class="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse"></span>
-                      <span>Live</span>
+                      <span data-i18n="dashboard.live">Uživo</span>
                     </div>
                   </div>
                 </div>
@@ -98,10 +106,10 @@
                   <div class="dashboard-card bg-black/30 rounded-lg p-2 border border-green-900/30">
                     <div class="flex items-center gap-1.5 mb-1">
                       <div class="h-1.5 w-1.5 rounded-full bg-green-400 status-indicator"></div>
-                      <span class="text-xs text-neutral-300">Email Processing</span>
+                      <span class="text-xs text-neutral-300" data-i18n="dashboard.email">Obrada e-pošte</span>
                     </div>
                     <div class="text-sm md:text-lg font-bold text-green-400">247</div>
-                    <div class="text-xs text-neutral-400 mb-1">Emails automated today</div>
+                    <div class="text-xs text-neutral-400 mb-1" data-i18n="dashboard.emailDesc">E-poruka automatizirano danas</div>
                     <div class="h-1 bg-neutral-700 rounded-full overflow-hidden">
                       <div class="h-full bg-green-400 rounded-full progress-bar animate-pulse" style="width: 78%"></div>
                     </div>
@@ -111,10 +119,10 @@
                   <div class="dashboard-card bg-black/30 rounded-lg p-2 border border-green-900/30">
                     <div class="flex items-center gap-1.5 mb-1">
                       <div class="h-1.5 w-1.5 rounded-full bg-green-400 status-indicator"></div>
-                      <span class="text-xs text-neutral-300">Data Entry</span>
+                      <span class="text-xs text-neutral-300" data-i18n="dashboard.data">Unos podataka</span>
                     </div>
                     <div class="text-sm md:text-lg font-bold text-green-400">1.2k</div>
-                    <div class="text-xs text-neutral-400 mb-1">Records processed</div>
+                    <div class="text-xs text-neutral-400 mb-1" data-i18n="dashboard.dataDesc">Obrađenih zapisa</div>
                     <div class="h-1 bg-neutral-700 rounded-full overflow-hidden">
                       <div class="h-full bg-green-400 rounded-full progress-bar animate-pulse" style="width: 65%"></div>
                     </div>
@@ -123,21 +131,21 @@
                 
                 <!-- Activity Feed - Takes remaining space -->
                 <div class="dashboard-card bg-black/30 rounded-lg p-2 md:p-4 border border-green-900/30 flex-1 min-h-0 overflow-hidden">
-                  <div class="text-xs text-neutral-300 mb-1 md:mb-3">Recent Activity</div>
+                  <div class="text-xs text-neutral-300 mb-1 md:mb-3" data-i18n="dashboard.activity">Nedavna aktivnost</div>
                   <div class="space-y-1 h-full overflow-y-auto" id="activityFeed">
                     <div class="activity-item flex items-center gap-2 text-xs opacity-80">
                       <span class="h-1 w-1 rounded-full bg-green-400 flex-shrink-0"></span>
-                      <span class="text-neutral-400 truncate">Processing invoice INV-2024-001...</span>
+                      <span class="text-neutral-400 truncate" data-i18n="dashboard.activity1">Obrada računa INV-2024-001...</span>
                       <span class="text-green-400 flex-shrink-0">✓</span>
                     </div>
                     <div class="activity-item flex items-center gap-2 text-xs opacity-60">
                       <span class="h-1 w-1 rounded-full bg-yellow-400 flex-shrink-0"></span>
-                      <span class="text-neutral-400 truncate">Syncing customer data to CRM...</span>
+                      <span class="text-neutral-400 truncate" data-i18n="dashboard.activity2">Sinkronizacija podataka kupaca u CRM...</span>
                       <span class="text-yellow-400 flex-shrink-0">⟲</span>
                     </div>
                     <div class="activity-item flex items-center gap-2 text-xs opacity-40">
                       <span class="h-1 w-1 rounded-full bg-green-400 flex-shrink-0"></span>
-                      <span class="text-neutral-400 truncate">Email campaign sent (247 recipients)</span>
+                      <span class="text-neutral-400 truncate" data-i18n="dashboard.activity3">Poslana e-mail kampanja (247 primatelja)</span>
                       <span class="text-green-400 flex-shrink-0">✓</span>
                     </div>
                   </div>
@@ -152,40 +160,40 @@
     <section id="solutions" class="relative border-t border-green-900/30">
       <div class="mx-auto max-w-7xl px-4 py-16 md:py-24">
         <div class="max-w-2xl">
-          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight">What we automate</h2>
-          <p class="mt-3 text-neutral-300">A focused set of high‑impact, admin‑heavy processes we consistently turn into hands‑free flows.</p>
+          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight" data-i18n="solutions.title">Što automatiziramo</h2>
+          <p class="mt-3 text-neutral-300" data-i18n="solutions.subtitle">Fokusirani skup procesa s visokim učinkom i puno administracije koje dosljedno pretvaramo u automatske tokove.</p>
         </div>
         <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" id="features">
           <div class="hover-glow relative overflow-hidden rounded-2xl border border-green-900/40 bg-neutral-900/40 p-5 md:p-6 transition-colors hover:bg-neutral-900/70">
-            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight">Automated email outreach & replies</h3></div>
-            <p class="mt-2 text-sm text-neutral-300 leading-relaxed">Trigger personalized emails based on events, parse inbound mail, auto‑route to the right owner, and draft replies — with human‑in‑the‑loop when needed.</p>
+            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight" data-i18n="solutions.feature1Title">Automatizirana e-pošta i odgovori</h3></div>
+            <p class="mt-2 text-sm text-neutral-300 leading-relaxed" data-i18n="solutions.feature1Desc">Pokrenite personalizirane e-poruke na temelju događaja, analizirajte dolaznu poštu, automatski preusmjerite pravom vlasniku i sastavite odgovore — uz ljudsku kontrolu kada je potrebna.</p>
           </div>
           <div class="hover-glow relative overflow-hidden rounded-2xl border border-green-900/40 bg-neutral-900/40 p-5 md:p-6 transition-colors hover:bg-neutral-900/70">
-            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight">Data entry & syncing</h3></div>
-            <p class="mt-2 text-sm text-neutral-300 leading-relaxed">Pull data from PDFs, forms or spreadsheets and write it into CRMs, ERPs or databases. Validate with rules to ensure 99.9% accuracy.</p>
+            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight" data-i18n="solutions.feature2Title">Unos i sinkronizacija podataka</h3></div>
+            <p class="mt-2 text-sm text-neutral-300 leading-relaxed" data-i18n="solutions.feature2Desc">Izvucite podatke iz PDF-ova, obrazaca ili proračunskih tablica i upišite ih u CRM-ove, ERP-ove ili baze podataka. Validirajte pravilima kako biste osigurali 99,9% točnosti.</p>
           </div>
           <div class="hover-glow relative overflow-hidden rounded-2xl border border-green-900/40 bg-neutral-900/40 p-5 md:p-6 transition-colors hover:bg-neutral-900/70">
-            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight">Invoice & document processing</h3></div>
-            <p class="mt-2 text-sm text-neutral-300 leading-relaxed">Extract invoice numbers, line items, and totals; reconcile with purchase orders; export clean spreadsheets or push straight into your finance system.</p>
+            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight" data-i18n="solutions.feature3Title">Obrada računa i dokumenata</h3></div>
+            <p class="mt-2 text-sm text-neutral-300 leading-relaxed" data-i18n="solutions.feature3Desc">Izvucite brojeve računa, stavke i ukupne iznose; uskladite s narudžbenicama; izvezite čiste proračunske tablice ili stavite izravno u vaš financijski sustav.</p>
           </div>
           <div class="hover-glow relative overflow-hidden rounded-2xl border border-green-900/40 bg-neutral-900/40 p-5 md:p-6 transition-colors hover:bg-neutral-900/70">
-            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight">Reports & dashboards</h3></div>
-            <p class="mt-2 text-sm text-neutral-300 leading-relaxed">Compile weekly KPIs, transform raw data, and publish dashboards automatically so your team always sees fresh, trustworthy numbers.</p>
+            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight" data-i18n="solutions.feature4Title">Izvještaji i kontrolne ploče</h3></div>
+            <p class="mt-2 text-sm text-neutral-300 leading-relaxed" data-i18n="solutions.feature4Desc">Sastavljajte tjedne KPI-je, transformirajte sirove podatke i automatski objavljujte kontrolne ploče kako bi vaš tim uvijek vidio svježe, pouzdane brojke.</p>
           </div>
           <div class="hover-glow relative overflow-hidden rounded-2xl border border-green-900/40 bg-neutral-900/40 p-5 md:p-6 transition-colors hover:bg-neutral-900/70">
-            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight">Spreadsheet automation</h3></div>
-            <p class="mt-2 text-sm text-neutral-300 leading-relaxed">Generate, merge and format Excel/Google Sheets — no more copy‑paste. Bulk updates, pivots, charts, you name it.</p>
+            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight" data-i18n="solutions.feature5Title">Automatizacija proračunskih tablica</h3></div>
+            <p class="mt-2 text-sm text-neutral-300 leading-relaxed" data-i18n="solutions.feature5Desc">Generirajte, spajajte i formatirajte Excel/Google Sheets — nema više kopiranja i lijepljenja. Masovna ažuriranja, pivot tablice, grafikoni, što god želite.</p>
           </div>
           <div class="hover-glow relative overflow-hidden rounded-2xl border border-green-900/40 bg-neutral-900/40 p-5 md:p-6 transition-colors hover:bg-neutral-900/70">
-            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight">Form filling & web flows</h3></div>
-            <p class="mt-2 text-sm text-neutral-300 leading-relaxed">Automate repetitive web tasks: logins, form filling, downloads, uploads — with audit trails and alerting.</p>
+            <div class="flex items-center gap-3 text-green-400">⚡<h3 class="text-lg font-semibold tracking-tight" data-i18n="solutions.feature6Title">Ispunjavanje obrazaca i web tokovi</h3></div>
+            <p class="mt-2 text-sm text-neutral-300 leading-relaxed" data-i18n="solutions.feature6Desc">Automatizirajte ponavljajuće web zadatke: prijave, ispunjavanje obrazaca, preuzimanja, učitavanja — s revizijskim tragovima i upozorenjima.</p>
           </div>
         </div>
         <div class="mt-10 flex flex-wrap items-center gap-3 text-green-300 text-xs">
-          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1">⚡ Mail automation</span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1">⚡ PDF → Excel</span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1">⚡ CRM/ERP sync</span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1">⚡ RPA + AI</span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1" data-i18n="solutions.tag1">⚡ Automatizacija pošte</span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1" data-i18n="solutions.tag2">⚡ PDF → Excel</span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1" data-i18n="solutions.tag3">⚡ CRM/ERP sinkronizacija</span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-800/60 bg-green-900/10 px-3 py-1" data-i18n="solutions.tag4">⚡ RPA + AI</span>
         </div>
       </div>
     </section>
@@ -193,24 +201,24 @@
     <section id="process" class="relative border-t border-green-900/30">
       <div class="mx-auto max-w-7xl px-4 py-16 md:py-24">
         <div class="max-w-2xl">
-          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight">How it works</h2>
-          <p class="mt-3 text-neutral-300">From idea to running automation in days, not months.</p>
+          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight" data-i18n="process.title">Kako funkcionira</h2>
+          <p class="mt-3 text-neutral-300" data-i18n="process.subtitle">Od ideje do funkcionalne automatizacije u danima, ne mjesecima.</p>
         </div>
         <div class="mt-10 grid gap-6 md:grid-cols-3" id="steps">
           <div class="rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6">
-            <div class="text-sm text-neutral-400">Step 1</div>
-            <div class="mt-2 text-xl font-semibold">Discover</div>
-            <p class="mt-2 text-sm text-neutral-300">We map your process, quantify the ROI, and pick quick wins.</p>
+            <div class="text-sm text-neutral-400" data-i18n="process.step1Label">Korak 1</div>
+            <div class="mt-2 text-xl font-semibold" data-i18n="process.step1Title">Otkrij</div>
+            <p class="mt-2 text-sm text-neutral-300" data-i18n="process.step1Desc">Mapiramo vaš proces, kvantificiramo ROI i odabiremo brze uspjehe.</p>
           </div>
           <div class="rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6">
-            <div class="text-sm text-neutral-400">Step 2</div>
-            <div class="mt-2 text-xl font-semibold">Design</div>
-            <p class="mt-2 text-sm text-neutral-300">We prototype with real data, add validations, and design the human‑in‑the‑loop.</p>
+            <div class="text-sm text-neutral-400" data-i18n="process.step2Label">Korak 2</div>
+            <div class="mt-2 text-xl font-semibold" data-i18n="process.step2Title">Dizajniraj</div>
+            <p class="mt-2 text-sm text-neutral-300" data-i18n="process.step2Desc">Pravimo prototip s pravim podacima, dodajemo validacije i dizajniramo ljudsku kontrolu.</p>
           </div>
           <div class="rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6">
-            <div class="text-sm text-neutral-400">Step 3</div>
-            <div class="mt-2 text-xl font-semibold">Deliver</div>
-            <p class="mt-2 text-sm text-neutral-300">We ship, monitor, and iterate. Your team sees results immediately.</p>
+            <div class="text-sm text-neutral-400" data-i18n="process.step3Label">Korak 3</div>
+            <div class="mt-2 text-xl font-semibold" data-i18n="process.step3Title">Isporuči</div>
+            <p class="mt-2 text-sm text-neutral-300" data-i18n="process.step3Desc">Isporučujemo, pratimo i iteriramo. Vaš tim odmah vidi rezultate.</p>
           </div>
         </div>
       </div>
@@ -219,29 +227,29 @@
     <section id="results" class="relative border-t border-green-900/30">
       <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 grid gap-10 md:grid-cols-2 items-center">
         <div>
-          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight">Proven outcomes</h2>
+          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight" data-i18n="results.title">Dokazani rezultati</h2>
           <ul class="mt-5 space-y-3 text-neutral-200" id="bullets">
-            <li class="flex items-start gap-3"><span class="mt-1 text-green-400">✔</span><span>70–80% average time saved on admin workloads</span></li>
-            <li class="flex items-start gap-3"><span class="mt-1 text-green-400">✔</span><span>Up to 100% automation for fully digital inputs</span></li>
-            <li class="flex items-start gap-3"><span class="mt-1 text-green-400">✔</span><span>Error rates cut to near‑zero with rule‑based checks</span></li>
-            <li class="flex items-start gap-3"><span class="mt-1 text-green-400">✔</span><span>Audit trails and logs for compliance</span></li>
+            <li class="flex items-start gap-3"><span class="mt-1 text-green-400">✔</span><span data-i18n="results.bullet1">70–80% prosječno uštede vremena na administrativnim zadacima</span></li>
+            <li class="flex items-start gap-3"><span class="mt-1 text-green-400">✔</span><span data-i18n="results.bullet2">Do 100% automatizacija za potpuno digitalne ulaze</span></li>
+            <li class="flex items-start gap-3"><span class="mt-1 text-green-400">✔</span><span data-i18n="results.bullet3">Stope grešaka smanjene gotovo na nulu s provjerama temeljenim na pravilima</span></li>
+            <li class="flex items-start gap-3"><span class="mt-1 text-green-400">✔</span><span data-i18n="results.bullet4">Revizijski tragovi i zapisi za usklađenost</span></li>
           </ul>
           <div class="mt-8">
-            <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 font-semibold text-black hover:brightness-110">Request a quote</a>
+            <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 font-semibold text-black hover:brightness-110" data-i18n="results.cta">Zatražite ponudu</a>
           </div>
         </div>
         <div class="rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6">
-          <div class="text-sm text-neutral-400">Example scenario</div>
-          <div class="mt-2 text-xl font-semibold">Invoices → Excel → ERP, fully automated</div>
-          <p class="mt-2 text-sm text-neutral-300">Parse supplier PDFs, capture bill numbers, items and totals, validate against POs, and post to ERP. A final human check only when rules flag something.</p>
+          <div class="text-sm text-neutral-400" data-i18n="results.exampleLabel">Primjer scenarija</div>
+          <div class="mt-2 text-xl font-semibold" data-i18n="results.exampleTitle">Računi → Excel → ERP, potpuno automatizirano</div>
+          <p class="mt-2 text-sm text-neutral-300" data-i18n="results.exampleDesc">Analizirajte PDF-ove dobavljača, zabilježite brojeve računa, stavke i ukupne iznose, validirajte prema narudžbenicama i objavite u ERP. Konačna ljudska provjera samo kada pravila nešto označe.</p>
           <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
             <div class="rounded-xl border border-green-900/40 bg-black/40 p-4">
-              <div class="text-neutral-400">Before</div>
-              <div class="mt-1 text-neutral-200">3–4h/day manual copy‑paste, frequent errors</div>
+              <div class="text-neutral-400" data-i18n="results.before">Prije</div>
+              <div class="mt-1 text-neutral-200" data-i18n="results.beforeDesc">3–4h/dan ručno kopiranje i lijepljenje, česte greške</div>
             </div>
             <div class="rounded-xl border border-green-900/40 bg-black/40 p-4">
-              <div class="text-neutral-400">After</div>
-              <div class="mt-1 text-neutral-200">~20 min/day oversight, 99.9% accuracy</div>
+              <div class="text-neutral-400" data-i18n="results.after">Poslije</div>
+              <div class="mt-1 text-neutral-200" data-i18n="results.afterDesc">~20 min/dan nadzor, 99,9% točnost</div>
             </div>
           </div>
         </div>
@@ -251,39 +259,39 @@
     <section id="contact" class="relative border-t border-green-900/30">
       <div class="mx-auto max-w-7xl px-4 py-16 md:py-24">
         <div class="max-w-2xl">
-          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight">Let's talk</h2>
-          <p class="mt-3 text-neutral-300">Tell us about your process. We'll reply with a quick plan, a timeline, and a ballpark estimate.</p>
+          <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight" data-i18n="contact.title">Razgovarajmo</h2>
+          <p class="mt-3 text-neutral-300" data-i18n="contact.subtitle">Recite nam o svom procesu. Odgovorit ćemo brzim planom, vremenskom linijom i okvirnom procjenom.</p>
         </div>
         <div class="mt-8 grid gap-6 md:grid-cols-3">
           <form class="md:col-span-2 rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6 space-y-4" id="contactForm">
             <div class="grid gap-4 sm:grid-cols-2">
               <label class="block text-sm">
-                <span class="text-neutral-300">Name</span>
-                <input name="name" required class="mt-1 w-full rounded-xl border border-green-900/40 bg-black/50 px-4 py-3 outline-none ring-0 focus:border-green-500" placeholder="Your name" />
+                <span class="text-neutral-300" data-i18n="contact.name">Ime</span>
+                <input name="name" required class="mt-1 w-full rounded-xl border border-green-900/40 bg-black/50 px-4 py-3 outline-none ring-0 focus:border-green-500" data-i18n-placeholder="contact.namePlaceholder" placeholder="Vaše ime" />
               </label>
               <label class="block text-sm">
-                <span class="text-neutral-300">Email</span>
-                <input name="email" type="email" required class="mt-1 w-full rounded-xl border border-green-900/40 bg-black/50 px-4 py-3 outline-none ring-0 focus:border-green-500" placeholder="you@company.com" />
+                <span class="text-neutral-300" data-i18n="contact.email">E-mail</span>
+                <input name="email" type="email" required class="mt-1 w-full rounded-xl border border-green-900/40 bg-black/50 px-4 py-3 outline-none ring-0 focus:border-green-500" data-i18n-placeholder="contact.emailPlaceholder" placeholder="vas@tvrtka.com" />
               </label>
             </div>
             <label class="block text-sm">
-              <span class="text-neutral-300">What would you like to automate?</span>
-              <textarea name="message" rows="5" class="mt-1 w-full rounded-xl border border-green-900/40 bg-black/50 px-4 py-3 outline-none ring-0 focus:border-green-500" placeholder="Describe the current process and tools…"></textarea>
+              <span class="text-neutral-300" data-i18n="contact.message">Što biste željeli automatizirati?</span>
+              <textarea name="message" rows="5" class="mt-1 w-full rounded-xl border border-green-900/40 bg-black/50 px-4 py-3 outline-none ring-0 focus:border-green-500" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Opišite trenutni proces i alate…"></textarea>
             </label>
             <div class="flex items-center justify-between">
-              <div class="text-xs text-neutral-400">By submitting, you agree to be contacted about Procify services.</div>
-              <button type="submit" class="rounded-full bg-green-500 px-5 py-3 font-semibold text-black hover:brightness-110">Send</button>
+              <div class="text-xs text-neutral-400" data-i18n="contact.agreement">Slanjem prihvaćate da vas kontaktiramo o Procify uslugama.</div>
+              <button type="submit" class="rounded-full bg-green-500 px-5 py-3 font-semibold text-black hover:brightness-110" data-i18n="contact.send">Pošalji</button>
             </div>
           </form>
           <div class="rounded-2xl border border-green-900/40 bg-neutral-900/40 p-6">
-            <div class="text-sm text-neutral-400">Contact</div>
+            <div class="text-sm text-neutral-400" data-i18n="contact.contactLabel">Kontakt</div>
             <div class="mt-2 space-y-2 text-neutral-200">
               <div>team@procify.co</div>
-              <div>Zagreb, Croatia</div>
+              <div>Zagreb, Hrvatska</div>
             </div>
-            <div class="mt-6 text-sm text-neutral-300">Prefer WhatsApp or Teams? Add it in your message and we'll reach out there.</div>
+            <div class="mt-6 text-sm text-neutral-300" data-i18n="contact.preferText">Preferirate WhatsApp ili Teams? Navedite u poruci i javit ćemo vam se tamo.</div>
             <div class="mt-6">
-              <a href="mailto:team@procify.co" class="inline-flex items-center gap-2 rounded-full border border-green-700/60 px-4 py-2 text-green-300 hover:bg-green-500/10">✉️ Email us</a>
+              <a href="mailto:team@procify.co" class="inline-flex items-center gap-2 rounded-full border border-green-700/60 px-4 py-2 text-green-300 hover:bg-green-500/10" data-i18n="contact.emailUs">✉️ Pošaljite nam e-mail</a>
             </div>
           </div>
         </div>
@@ -292,11 +300,11 @@
 
     <footer class="border-t border-green-900/30">
       <div class="mx-auto max-w-7xl px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
-        <div>© <span id="year"></span> Procify. All rights reserved.</div>
+        <div>© <span id="year"></span> Procify. <span data-i18n="footer.rights">Sva prava pridržana.</span></div>
         <div class="flex items-center gap-4">
-          <a href="#solutions" class="hover:text-white">Solutions</a>
-          <a href="#process" class="hover:text-white">How it works</a>
-          <a href="#contact" class="hover:text-white">Contact</a>
+          <a href="#solutions" class="hover:text-white" data-i18n="nav.solutions">Rješenja</a>
+          <a href="#process" class="hover:text-white" data-i18n="nav.process">Kako funkcionira</a>
+          <a href="#contact" class="hover:text-white" data-i18n="nav.contact">Kontakt</a>
         </div>
       </div>
     </footer>
